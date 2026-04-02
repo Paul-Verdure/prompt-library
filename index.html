@@ -9,8 +9,26 @@
 <body>
     <div class="container">
         <header>
-            <h1>📚 Prompt Library</h1>
-            <p class="subtitle">Store and manage your favorite prompts</p>
+            <div class="header-top">
+                <div class="header-title">
+                    <h1>📚 Prompt Library</h1>
+                    <p class="subtitle">Store and manage your favorite prompts</p>
+                </div>
+                <div class="header-actions">
+                    <button id="exportBtn" class="btn btn-secondary btn-sm" title="Export all prompts to JSON">
+                        ⬇️ Export
+                    </button>
+                    <button id="importBtn" class="btn btn-secondary btn-sm" title="Import prompts from JSON">
+                        ⬆️ Import
+                    </button>
+                    <input 
+                        type="file" 
+                        id="importFile" 
+                        accept=".json" 
+                        style="display: none;"
+                    >
+                </div>
+            </div>
         </header>
 
         <main>
@@ -24,6 +42,15 @@
                                 type="text" 
                                 id="promptTitle" 
                                 placeholder="e.g., Code Review Assistant"
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="promptModel">AI Model</label>
+                            <input 
+                                type="text" 
+                                id="promptModel" 
+                                placeholder="e.g., GPT-4, Claude 3.5, Gemini Pro"
                                 required
                             >
                         </div>
